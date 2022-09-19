@@ -46,20 +46,27 @@ class InscripcionesController extends Controller
     {
 
         $Variable =  $request->input("DNIPr");
+        $itemIns=$request->input("ultimo");
+
         //---------------------------------------------
+        $max= Inscripciones::max('id');
+        $siguiente=$max+1;
         $insripcion = inscripciones::latest()->get();
-        $Especies = Especies::pluck('id', 'Nombre');
+        $Ultimo= Inscripciones::max('id');
+        $Especies = Especies ::latest()->get();
+        $cmbEspecie= Especies::pluck('id', 'Nombre');
+
         $localidad = Localidades::orderBy('Nombre', 'asc')->pluck('id', 'Nombre');
         $Institucion = Instituciones::orderBy('Nombre', 'asc')->pluck('id', 'Nombre');
         $departamentos = Departamentos::pluck('id', 'Nombre');
         $persona =   Personas::where('IdRol', '=', '3')->get()->pluck('id', 'Apellido', 'Nombre');
         $productor = Personas::Where('DNI', '=', $Variable)->get();
           //----------------------
-           $item = new Item();
+           $ItemList = Item ::where('idInscripcion', '=', $siguiente)->get();
            $action = URL::route('Inscripcion.create',);
 
 
-        return view('inscripciones.Inscripcion.create', ['Inscripciones' => $insripcion, 'productor' => $productor, 'ItemList' => $item], compact('localidad', 'Institucion', 'persona', 'Especies','action'));
+        return view('inscripciones.Inscripcion.create', ['Inscripciones' => $insripcion, 'productor' => $productor, 'ultimo'=>$siguiente, 'Especies'=>$Especies, 'ItemList'=>$ItemList], compact('localidad', 'Institucion', 'persona','cmbEspecie'));
     }
     public function LoadItem(Request $item)
     {

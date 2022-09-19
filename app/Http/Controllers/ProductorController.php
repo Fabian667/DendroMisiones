@@ -9,6 +9,7 @@ use App\Models\Personas;
 use App\Models\Roles;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
+use PhpParser\Node\Expr\New_;
 
 class ProductorController extends Controller
 {
@@ -52,6 +53,7 @@ class ProductorController extends Controller
                 //'email' => 'required|email|unique:REF',
             ]);
         $persona = new Personas();
+        $persona->FechaNacimiento = $request->input("FechaNacimiento");
         $persona->Apellido = $request->input("Apellido");
         $persona->Nombre = $request->input("Nombre");
         $persona->DNI = $request->input("DNI");

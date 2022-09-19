@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inscripciones;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,12 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $item = item::latest() ->get();  //
+        $item = item::latest() ->get();
+
+        //---------------------------------------------
+
+
+        return view('inscripciones.Inscripcion.anexo.itemCreate', ['items' => $item],compact('Especies')); //
     }
 
     /**
@@ -22,9 +28,16 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+    public function create(Request $request)
     {
-        //
+       // 'id','Cantidad','idEspecie','areaApl','areaUni','idInscripcion'
+
+        $Variable =  $request->input("IdEspecie");
+        //---------------------------------------------
+        $item = Item::latest()->get();
+
+        return view('inscripciones.Inscripcion.anexo.itemCreate', ['items' => $item],compact('Especies'));
     }
 
     /**
@@ -33,9 +46,30 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $item)
     {
-        //
+        //'Cantidad','idEspecie','areaApl','areaUni','idInscripcion
+
+        $max= Inscripciones::max('id');
+        $siguiente=$max+1;
+        $item->idEspecie=$item->input("IdEspecie");
+        $item->idInscripcion=$siguiente;
+        $item->Cantidad = $item->input("Cantidad");
+        $item->areaApl = $item->input("SupPINO");
+        $item->areaUni=$item->input("Superficie");
+        $item->save();
+        return redirect()->route('Inscripcion.create');
+        //-----------------------------------------------
+
+
+
+
+
+
+
+
+
+
     }
 
     /**
@@ -80,6 +114,9 @@ class ItemController extends Controller
      */
     public function destroy(Item $item)
     {
+        $item = item::findOrFail($item);
+        $item->delete();
+        return redirect()->route('Inscripcion.create');
         //
     }
     //

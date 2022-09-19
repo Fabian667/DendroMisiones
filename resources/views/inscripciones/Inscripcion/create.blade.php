@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -39,6 +39,11 @@
                     </div>
                 </div>
                 <hr>
+                <H6>
+                    Datos del Productor
+                </H6>
+
+
 
                 <form class="text-white bg-dark" action="{{ route('Inscripcion.store') }}" method="post">
                     <div class="well">
@@ -53,9 +58,13 @@
                             </div>
                             {{-- comienzo datos del productor----------------------------------------------------------------------------------------------------------------------------------- --}}
 
-                            <H6>
-                                Datos del Productor
-                            </H6>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <label for="">inscripcion n°</label>
+                                    <input type="text" name="ultimo" class="form-control" value="{{ $ultimo }}"
+                                        placeholder="" tabindex="2">
+                                </div>
+                            </div>
 
                             @foreach ($productor as $pro)
                                 <div class="col-xs-6 col-sm-6 col-md-6">
@@ -177,15 +186,19 @@
                 {{-- -- comienzo datos del emprendimiento---------------------------------------------------------------------------------------------------------------------------------- --}}
 
                 <hr>
-                <br>
-                <div class="col-xs-6 col-sm-6 col-md-6">
+
+                <div class="col-xs-100 col-sm-6 col-md-6" style="text-align: center">
                     <u>
                         <H6>
                             Datos del Emprendimiento
+
                         </H6>
+                        <br>
                     </u>
                 </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
+                <br>
+
+                <div class="">
                     <u>
                         <h6>
                             Carga de Productos a Entregar
@@ -193,50 +206,16 @@
                     </u>
                 </div>
             </div>
-            {{-- empieza la carga de item--}}
+
+            {{-- empieza la carga de item --}}
             <div class="col-xs-6 col-sm-6 col-md-6">
-                <button type="button" class=" btn  btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#CargaItem">
+                <button type="button" class=" btn  btn-sm btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#CargaItem">
                     Agregar Producto
                 </button>
-                <table class="table table-dark" id="tablaItem">
-                    <thead class="thead-light">
-
-                        <tr>
-
-                            <?php
-                            if (isset($_REQUEST['btn'])):
-                                for ($x = 1; $x <= sizeof($_REQUEST['cant']); $x++):
-                                    echo $_REQUEST['cant'][$x] . '<br>';
-                                endfor;
-                            endif;
-                            ?>
 
 
 
-                            <?php
-                            $array = ['Especie ', 'Cantidad ', 'Unidad ', 'Superficie '];
-                            foreach ($array as $items => $itemsResibidos) {
-                                echo '<th>' . $itemsResibidos . '</th>';
-                            }
-                            ?>
-                        </tr>
-
-                    </thead>
-                    <tbody class="col-sm-5">
-
-                        <tr>
-                            <?php
-                            $array = [$key, 'cant', 'Unidad ', 'Superficie '];
-
-                            foreach ($array as $p) {
-                                echo '<td>' . $p . '</td>';
-                            }
-
-                            ?>
-                        </tr>
-
-                    </tbody>
-                </table>
 
 
             </div>
@@ -246,6 +225,8 @@
                 <input type="text" name="Descripcion" class="form-control" placeholder="DESCRIPCION">
 
             </div>
+            <br>
+            <hr>
             <div class="col-sm-8">
                 <u>
                     <H6>
@@ -253,6 +234,7 @@
                     </H6>
                 </u>
             </div>
+            <br>
             {{-- @foreach ($productor as $pro)
                         <div class="col-sm-5  ">
                             <label for="">Entidad</label>
@@ -294,60 +276,28 @@
     </button> --}}
 
     <!-- Modal -->
+
+    <!-- Full screen modal -->
+
     <div class="modal fade  " id="CargaItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+
+
+
+        <div class="modal-dialog modal-fullscreen-sm-down">
             <div class="modal-content">
                 <div class="modal-header bg-success">
                     <h5 class="modal-title" id="exampleModalLabel">Item</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body bg-secondary">
-                    <div class="row bg-secondary">
-                        <form class=" offset-md-1 col w-100 " action="{{ route('Inscripcion.LoadItem', $ItemList->id) }}">
-
-                            <div class="col-xs-6 col-sm-6 ">
-                                <label for="">Especie</label>
-                                <br>
-                                <select class="col-sm-5 " name="IdEspecie" id="IdEspecie">
-                                    @foreach ($Especies as $key => $value)
-                                        <option value="{{ $value }}">{{ $key }}</option>
-                                    @endforeach
-                                </select>
-                                <br>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 ">
-                                <label for="">Cantidad </label>
-
-                                <input type="text" name="cant" class="form-control" placeholder="CANTIDAD">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <label for="">Unidad</label>
-                                <input type="text" name="SupPINO" class="form-control" placeholder="UNIDAD">
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6">
-                                <label for="">Superficie o area de aplicacion</label>
-                                <input type="text" name="SupPINO" class="form-control" placeholder="HECT..">
-                            </div>
-                            {{-- ------------------------------------------------------------------------------------------------------ --}}
-                            <script src="{{ asset('\App\Http\MisClases\AgregarFila.js') }}"></script>
-
-
-
-
-
-                        </form>
-
-
-
-
-
-
+                <div class="modal-body  bg-dark">
+                    <div class="row  bg-dark ">
+                        @include('inscripciones.Inscripcion.anexo.itemcreate')
                         {{-- ----------------------------------------------------------------------------- --}}
-
                     </div>
                 </div>
                 <div class="modal-footer bg-success">
-                    <button type="button" class="btn  btn-sm btn-outline-warning text-white" data-bs-dismiss="modal">CERRAR</button>
+                    <button type="button" class="btn  btn-sm btn-outline-warning text-white"
+                        data-bs-dismiss="modal">CERRAR</button>
                     <button type="button" class="btn  btn-sm btn-outline-primary text-white">GUARDAR</button>
                 </div>
             </div>

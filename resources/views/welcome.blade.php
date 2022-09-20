@@ -13,7 +13,7 @@
 
 <body background="{{ asset('image/ViveroForestal.jpg') }}" class="antialiased  w-100">
 
-    @include('layouts.menu')
+    {{-- @include('layouts.menu') --}}
 
     <section class="">
         {{-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">

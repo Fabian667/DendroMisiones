@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Menu;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,11 +23,15 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-
-    public function boot()
+    public function boot(UrlGenerator $url)
     {
-        view()->composer('layouts.menu', function($view) {
-            $view->with('menus', Menu::menus());
-        });
+       if (env('REDIRECT_HTTPS')) {
+           $url->formatScheme('https://');
+       }
+
+       view()->composer('layouts.menu', function($view) {
+        $view->with('menus', Menu::menus());
+    });
     }
+
 }

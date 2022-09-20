@@ -15,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
+   if (env('REDIRECT_HTTPS')) {
+    $this->app['request']->server->set('HTTPS', true);
+}
     }
 
     /**
@@ -29,9 +32,7 @@ class AppServiceProvider extends ServiceProvider
            $url->formatScheme('https://');
        }
 
-       view()->composer('layouts.menu', function($view) {
-        $view->with('menus', Menu::menus());
-    });
+
     }
 
 }

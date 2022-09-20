@@ -11,7 +11,7 @@
     <title>DendroMisiones</title>
 </head>
 
-<body background="{{ asset('image/ViveroForestal.jpg') }}" class="antialiased  w-100">
+<body background="{{ secure_asset('image/ViveroForestal.jpg') }}" class="antialiased  w-100">
 
     @include('layouts.menu')
 
@@ -152,8 +152,8 @@
                 </div>
 
             </DIV>
-            <script src="{{ asset('js/jquery.min.js') }}"></script>
-            <script src="{{ asset('js/app.js') }}" defer></script>
+            <script src="{{ secure_asset('js/jquery.min.js') }}"></script>
+            <script src="{{ secure_asset('js/app.js') }}" defer></script>
         </section>
 
 

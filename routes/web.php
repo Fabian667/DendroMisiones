@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -47,6 +47,10 @@ Route::get('Inscripciones/export/', ['as' => 'Inscripcion.export','uses'=>'App\H
 Route::get('Productor/export/', ['as' => 'Productor.export','uses'=>'App\Http\Controllers\ProductorController@export']);
 //-------------------------------------------------------------------------
 // Route::resource('Entregas/Entrega', 'EntregaController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 

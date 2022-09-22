@@ -13,7 +13,7 @@
 
 <body class="bg-dark text-white">
 
-    @include('layouts.menu')
+    @include('layouts.Menu')
     <hr>
     <div class="container">
         <div class=" bg-dark text-white">

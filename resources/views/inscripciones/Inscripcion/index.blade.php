@@ -15,7 +15,7 @@
 
 <body class=" p-3 bg-dark text-white">
 
-    @include('layouts.menu')
+    @include('layouts.Menu')
     <hr>
     <div class="container">
         <div class="card-header bg-dark text-white">BUSQUEDA DE INSCRIPCIONES</div>

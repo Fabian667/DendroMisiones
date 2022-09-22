@@ -11,7 +11,7 @@
 </head>
 
 <body class="bg-dark text-white">
-    @include('layouts.menu')
+    @include('layouts.Menu')
     <div class="container">
 
         @if ($errors->any())

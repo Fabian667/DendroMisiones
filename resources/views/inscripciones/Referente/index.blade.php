@@ -12,7 +12,7 @@
 </head>
 
 <body class="p-3 bg-dark text-white">
-    @include('layouts.menu')
+    @include('layouts.Menu')
     <div class="container">
         {!! Form::open(['route' => 'Referente.index', 'method' => 'GET', 'role' => 'search']) !!}
         {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Apellido Nombre']) !!}

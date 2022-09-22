@@ -11,7 +11,7 @@
 </head>
 
 <body class=" p-3 bg-dark text-white">
-    @include('layouts.menu')
+    @include('layouts.Menu')
 
 
 

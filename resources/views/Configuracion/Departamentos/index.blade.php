@@ -13,7 +13,7 @@
 <body class=" p-3 bg-dark text-white">
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    @include('layouts.menu')
+    @include('layouts.Menu')
     <div class="table table-sm">
         <div class=" col-sm-15 mx-auto">
 

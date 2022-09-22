@@ -15,7 +15,7 @@
 
 
 
-    @include('layouts.menu')
+    @include('layouts.Menu')
     <hr>
     <div class="container">
 

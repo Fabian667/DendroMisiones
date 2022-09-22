@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
            $url->formatScheme('https://');
        }
 
-       view()->composer('layouts.menu', function($view) {
+       view()->composer('layouts.Menu', function($view) {
         $view->with('menus', Menu::menus());
     });
     }

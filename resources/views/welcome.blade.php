@@ -11,7 +11,7 @@
     <title>DendroMisiones</title>
 </head>
 
-<body background="{{ asset('image/ViveroForestal.jpg') }}" class="antialiased  w-100">
+<body background="{{ asset('image/pinos.jfif') }}" alt="img" class="antialiased  w-100">
 
     @include('layouts.Menu')
 
@@ -47,20 +47,19 @@
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
+                    <h3 class="accordion-header" id="flush-headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                             Secretaria de desarrollo Forestal
                         </button>
 
-                    </h2>
+                    </h3>
 
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                         data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
                             <p>
-                                En este marco la Subsecretaría de Desarrollo Forestal, Autoridad de aplicación de la
-                                mencionada Ley, está trabajando en generar acuerdos con consumidores de recursos
+                                En este marco la Subsecretaría de Desarrollo Forestal, está trabajando en generar acuerdos con consumidores de recursos
                                 dendroenergéticos (leña), con productores y/o con instituciones que los representen
                                 (cooperativas, municipalidades, etc.) a fin de establecer en el presente año parte de
                                 las plantaciones forestales con fines energéticos, de un total de diez mil que se piensa
@@ -132,9 +131,9 @@
 
             <div class="vstack gap-3">
                 <div class="bg-light border">
-                    <H2>
+                    <H3>
                         Breve Explicación del programa
-                    </H2>
+                    </H3>
 
                     <P>
 
@@ -158,8 +157,8 @@
 
 
 </body>
-<footer>
+{{-- <footer>
     @include('layouts.Pie')
-</footer>
+</footer> --}}
 
 </html>

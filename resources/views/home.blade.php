@@ -1,3 +1,17 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <title>DendroMisiones</title>
+</head>
+<body background="{{ asset('image/pinos.jfif') }}"  alt="img"class="antialiased  w-100">
+
+
+
+<div>
 @extends('layouts.app')
 
 @section('content')
@@ -5,7 +19,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Dendromisiones') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,10 +28,12 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('  Bienvenido  ') }}
                 </div>
             </div>
         </div>
     </div>
 </div>
 @endsection
+</div>
+</body>

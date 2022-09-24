@@ -291,7 +291,7 @@
                 </div>
                 <div class="modal-body  bg-dark">
                     <div class="row  bg-dark ">
-                        @include('inscripciones.Inscripcion.anexo.itemcreate')
+                        @include('inscripciones.Inscripcion.anexo.itemCreate')
                         {{-- ----------------------------------------------------------------------------- --}}
                     </div>
                 </div>

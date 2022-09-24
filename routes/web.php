@@ -17,12 +17,6 @@ Route::get('/', function () {
     return view('home');
 });
 
-Auth::routes();
-
-
-
-
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
@@ -48,10 +42,10 @@ Route::get('Productor/export/', ['as' => 'Productor.export','uses'=>'App\Http\Co
 //-------------------------------------------------------------------------
 // Route::resource('Entregas/Entrega', 'EntregaController');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+Auth::routes(["register" => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

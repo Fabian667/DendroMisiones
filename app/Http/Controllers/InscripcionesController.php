@@ -135,7 +135,7 @@ class InscripcionesController extends Controller
         $Institucion = Instituciones::orderBy('Nombre', 'asc')->pluck('id', 'Nombre');
         $departamentos = departamentos::pluck('id', 'Nombre');
         $persona =   Personas::where('IdRol', '=', '3')->get()->pluck('id', 'Apellido', 'Nombre');
-        return view('Inscripciones.inscripcion.edit', ['inscripciones' => $inscriptos], compact('localidad', 'Institucion', 'Especies', 'departamentos', 'persona'));
+        return view('inscripciones.Inscripcion.edit', ['inscripciones' => $inscriptos], compact('localidad', 'Institucion', 'Especies', 'departamentos', 'persona'));
     }
 
     public function update(Request $request, $id)

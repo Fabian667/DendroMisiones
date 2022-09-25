@@ -6,11 +6,9 @@
         <div class="col-md-8">
 
             <div class="card ">
-                /* El encabezado de la tarjeta. */
                 <div class="card-header text-white bg-success ">{{ __('Iniciar sesion') }}</div>
 
-                <div class="card-body text-success">
-                    /* Un formulario que se enviará al inicio de sesión de la ruta. */
+                <div class="card-body text-success text-left">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -18,10 +16,6 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
-                               /* Esta es una entrada de formulario que usa la directiva `@error` para
-                               verificar si el campo de correo electrónico tiene un error. Si lo
-                               hace, agregará la clase `is-invalid` a la entrada y mostrará el
-                               mensaje de error. */
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -38,8 +32,6 @@
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                              /* Una directiva blade que comprueba si el campo de contraseña tiene un
-                              error. */
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -51,8 +43,6 @@
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
-                                  /* Una casilla de verificación que recordará al usuario si quiere ser
-                                  recordado. */
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
@@ -64,11 +54,15 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                /* Este es un botón de envío que enviará el formulario. */
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Ingresar') }}
                                 </button>
 
+                                {{-- @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('¿Olvidaste tu contraseña?') }}
+                                    </a>
+                                @endif --}}
                             </div>
                         </div>
                     </form>

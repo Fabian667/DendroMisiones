@@ -6,29 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}">
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <title>DendroMisiones</title>
 </head>
 
-<body background="{{ asset('image/pinos.jfif') }}" alt="img" class="antialiased  w-100">
+<body background="{{ asset('image/pinos.jfif') }}" alt="img" >
 
     @include('layouts.Menu')
 
     <section class="">
-        {{-- <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="image/dendro.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="image/agroMisiones.png" class="d-block w-100" alt="...">
-            </div>
-             <div class="carousel-item">
-                <img src="image/pre1.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-    </div> --}}
 
 
         <section class="float-md-end mb-3 ms-md-3" style="width: 25rem; height: 100%;">
@@ -157,8 +144,8 @@
 
 
 </body>
-{{-- <footer>
+<footer class=" footer">
     @include('layouts.Pie')
-</footer> --}}
+</footer>
 
 </html>

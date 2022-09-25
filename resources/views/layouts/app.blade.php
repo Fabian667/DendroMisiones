@@ -25,7 +25,7 @@
 
 <body background="{{ asset('image/pinos.jfif') }}"  alt="img"class="antialiased  w-100">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark   sticky-top py-1 ">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('home') }}">
                     {{ config('app.name', 'Dendro') }}

@@ -5608,7 +5608,14 @@ textarea.form-control-lg {
 .modal-footer > * {
   margin: 0.25rem;
 }
+.footer{
 
+
+        /* Like the header, the footer will have a static height - it shouldn't grow or shrink.  */
+        /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+        flex: 0 0 auto;
+
+    }
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 500px;

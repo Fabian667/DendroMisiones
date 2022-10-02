@@ -12,7 +12,8 @@
 </head>
 
 <body background="{{ asset('image/pinos.jfif') }}" alt="img" >
-
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
     @include('layouts.Menu')
 
     <section class="">

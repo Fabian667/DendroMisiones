@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inscripciones</title>
-    <link rel="stylesheet" href="{{ secure_asset('css/bootstrap-theme.min.css') }}">
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
 
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="card-header bg-dark text-white">BUSQUEDA DE INSCRIPCIONES</div>
         <div class="p-1 bg-dark border border-success">
-           /* Un formulario que se utilizará para buscar registros. */
+            {{--  Un formulario que se utilizará para buscar registros.  --}}
             {!! Form::open(['route' => 'Inscripcion.index', 'method' => 'GET', 'role' => 'search']) !!}
             <div class="col-auto">{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'APELLIDO, NOMBRE, DNI, ENTIDAD']) !!}
             </div>
@@ -34,10 +34,10 @@
             <br><br>
             <div class=" col-md-6">
                 <button class="btn btn-success btn-sm active" type="submit" class="btn btn-success">BUSCAR</button>
-               /* Un botón que te llevará al formulario para crear un nuevo registro. */
+                {{--  Un botón que te llevará al formulario para crear un nuevo registro.  --}}
                 <a class="btn btn-primary btn-sm " href="{{ route('Inscripcion.create') }}">NUEVO</a></i>
 
-                /* Un botón que exportará los datos a un archivo de Excel. */
+                 {{--  Un botón que exportará los datos a un archivo de Excel.  --}}
                 <a class="btn btn-primary btn-sm " href="{{ route('Inscripcion.export') }}">Exportar</a></i>
             </div>
             {!! Form::close() !!}
@@ -46,7 +46,7 @@
 
 
 
-     /* Creando una tabla con un fondo oscuro. */
+      {{--  Creando una tabla con un fondo oscuro.  --}}
         <table class="table table-dark">
             <thead class="table-dark">
                 <tr>
@@ -69,8 +69,8 @@
 
             </thead>
             <tbody>
-        /* Comprobando si la mesa está vacía. Si está vacío, mostrará un mensaje. Si no está vacío,
-        mostrará la tabla. */
+        {{--   Comprobando si la mesa está vacía. Si está vacío, mostrará un mensaje. Si no está vacío,
+        mostrará la tabla.   --}}
 
                 @if ($Inscripciones->isEmpty())
                     <div style='font-size: 19px;'>No hay resultados!</div>

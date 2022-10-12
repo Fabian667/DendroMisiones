@@ -66,18 +66,24 @@ class InscripcionesController extends Controller
            $action = URL::route('Inscripcion.create',);
 
 
-        return view('inscripciones.Inscripcion.create', ['Inscripciones' => $insripcion, 'productor' => $productor, 'ultimo'=>$siguiente, 'Especies'=>$Especies, 'ItemList'=>$ItemList], compact('localidad', 'Institucion', 'persona','cmbEspecie'));
+        return view('inscripciones.Inscripcion.create', ['Inscripciones' => $insripcion, 'productor' => $productor, 'ultimo'=>$siguiente, 'Especies'=>$Especies], compact('localidad', 'Institucion', 'persona'));
     }
-    public function LoadItem(Request $item)
-    {
-        $Plantin =  $item->input("plantin");
-        $Unidad =  $item->input("Unidad");
-        $Cantidad =  $item->input("Cantidad");
-        $Superficie =  $item->input("Superficie");
+//-------------comienza el enjendro desconocido
 
 
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -115,13 +121,6 @@ class InscripcionesController extends Controller
         $insripcion = inscripciones::all();
         return back();
         $item = new item();
-    }
-    public function item(Request $items)
-    {
-        $item = new Item();
-        $item->Cantidad = $items->input("Cantidad");
-        return view('inscripciones.Inscripcion.create', ['Item' => $item]);
-
     }
 
     public function show(Inscripciones $inscripciones)

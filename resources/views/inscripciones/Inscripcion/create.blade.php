@@ -9,6 +9,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <title>Carga de Inscripcion</title>
+    @livewireStyles
 </head>
 
 <body class=" p-3 bg-dark text-white">
@@ -61,8 +62,8 @@
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
                                     <label for="">inscripcion n°</label>
-                                    <input type="text" name="ultimo" class="form-control" value="{{ $ultimo }}"
-                                        placeholder="" tabindex="2">
+                                    <input type="text" name="ultimo" class="form-control"
+                                        value="{{ $ultimo }}" placeholder="" tabindex="2">
                                 </div>
                             </div>
 
@@ -208,11 +209,19 @@
             </div>
 
             {{-- empieza la carga de item --}}
-            <div class="col-xs-6 col-sm-6 col-md-6">
-                <button type="button" class=" btn  btn-sm btn-outline-primary" data-bs-toggle="modal"
+            <div class="col-xs-18 col-sm-18 col-md-18">
+                {{-- <button type="button" class=" btn  btn-sm btn-outline-primary" data-bs-toggle="modal"
                     data-bs-target="#CargaItem">
                     Agregar Producto
-                </button>
+                </button> --}}
+
+                {{-- @livewire('Item') --}}
+
+
+                <div x-data x-init="window.Livewire.rescan($el)">
+                    <livewire:item>
+
+                </div>
 
 
 
@@ -236,17 +245,17 @@
             </div>
             <br>
             {{-- @foreach ($productor as $pro)
-                        <div class="col-sm-5  ">
-                            <label for="">Entidad</label>
-                            <select name="IdEntidad" id="IdEntidad">
-                                @foreach ($Institucion as $key => $value)
-                                    <option value="{{ $key }}" @if ($value == old('IdInstitucion', $pro->IdInstitucion))
-                                        selected="selected"
-                                @endif
-                                >{{ $key }}</option>
-                            </select>
-                        </div>
+
                     @endforeach --}}
+            <div class="col-sm-5  ">
+                <label for="">Entidad</label>
+                <select name="IdEntidad" id="IdEntidad">
+                    @foreach ($Institucion as $key => $value)
+                        <option value="{{ $value }}">{{ $key }}</option>
+                    @endforeach>
+                </select>
+            </div>
+            <br>
             <div class="col-sm-5">
                 <label for="">Referente</label>
                 <select name="IdReferente" id="IdReferente">
@@ -279,34 +288,12 @@
 
     <!-- Full screen modal -->
 
-    <div class="modal fade  " id="CargaItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-
-
-        <div class="modal-dialog modal-fullscreen-sm-down">
-            <div class="modal-content">
-                <div class="modal-header bg-success">
-                    <h5 class="modal-title" id="exampleModalLabel">Item</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body  bg-dark">
-                    <div class="row  bg-dark ">
-                        @include('inscripciones.Inscripcion.anexo.itemCreate')
-                        {{-- ----------------------------------------------------------------------------- --}}
-                    </div>
-                </div>
-                <div class="modal-footer bg-success">
-                    <button type="button" class="btn  btn-sm btn-outline-warning text-white"
-                        data-bs-dismiss="modal">CERRAR</button>
-                    <button type="button" class="btn  btn-sm btn-outline-primary text-white">GUARDAR</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 
     <script src="{{ asset('js/app.js') }}" defer></script>
+    @livewireScripts
+
 </body>
 
 </html>

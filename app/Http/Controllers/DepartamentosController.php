@@ -32,7 +32,7 @@ class DepartamentosController extends Controller
             }
             $provincias = Provincias::pluck('id', 'Nombre');
             $zonas = Zonas::pluck('id', 'Nombre');
-            return view('COnfiguracion.Departamentos.index', ['departamentos' => $departamento], compact('provincias', 'zonas'));
+            return view('Configuracion.Departamentos.index', ['departamentos' => $departamento], compact('provincias', 'zonas'));
         }
     }
 

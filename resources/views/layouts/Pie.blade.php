@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </HEAd>
-<div class="bg-dark text-white footer">
-    <div >
-        <hr>
-         SUBSECRETARIA DE DESARROLLO FORESTAL MINISTERIO DEL AGRO Y LA PRODUCCION
-    </div>
 
-</div>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-bottom bg-dark text-white">
+        <hr>
+        <div class="container">
+          <p class="navbar-text"> SUBSECRETARIA DE DESARROLLO FORESTAL MINISTERIO DEL AGRO Y LA PRODUCCION</p>
+        </div>
+      </div>
+</body>
+
+
 
 </html>

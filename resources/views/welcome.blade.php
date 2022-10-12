@@ -13,7 +13,6 @@
 
 <body background="{{ asset('image/pinos.jfif') }}" alt="img" >
     <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}" defer></script>
     @include('layouts.Menu')
 
     <section class="">
@@ -115,38 +114,40 @@
 
 
         </section>
-        <section>
 
+<section style="width: 25rem; height: 100%;">
             <div class="vstack gap-3">
                 <div class="bg-light border">
-                    <H3>
+                    <H4>
                         Breve Explicación del programa
-                    </H3>
+                    </H4>
 
                     <P>
-
-
                         En vista del consumo industrial de leña en la provincia y de la presión que este consumo ejerce
-                        sobre los bosques nativos la Cámara de Representantes de la Provincia de Misiones ha sancionado
-                        la
+                        sobre los bosques nativos
+                    </P>
+                    <p>
+                        La Cámara de Representantes de la Provincia de Misiones ha sancionado
                         Ley XVI 106 de Recursos Dendroenergéticos Renovables.
                         En ella se propician entre otras cosas la sustitución de la producción, comercialización y
-                        consumo
-                        industrial de leña y de carbón vegetal de origen de bosques naturales, por leña de bosques
+                        consumo industrial de leña y de carbón vegetal de origen de bosques naturales, por leña de bosques
                         cultivados.
-
-                    </P>
+                    </p>
                 </div>
 
             </DIV>
-            <script src="{{ asset('js/jquery.min.js') }}"></script>
-            <script src="{{ asset('js/app.js') }}" defer></script>
         </section>
 
 
+
 </body>
-<footer class=" footer">
-    @include('layouts.Pie')
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+            <script src="{{ asset('js/app.js') }}" defer></script>
+
+<footer class="   footer">
+    @extends('layouts.Pie')
 </footer>
+
+
 
 </html>

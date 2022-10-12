@@ -119,6 +119,8 @@
 <script src="{{ asset('js/app.js') }}" defer></script>
 
 
-
+<footer class="navbar navbar-inverse navbar-fixed-bottom">
+    @extends('layouts.Pie')
+</footer>
 
 </html>

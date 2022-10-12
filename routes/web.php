@@ -35,6 +35,8 @@ Route::resource('Inscripciones/Institucion', '\App\Http\Controllers\Institucione
 Route::resource('Inscripciones/Referente', '\App\Http\Controllers\ReferenteController');
 Route::resource('Inscripciones/Productor', '\App\Http\Controllers\ProductorController');
 Route::resource('Inscripciones/Item', '\App\Http\Controllers\ItemController');
+
+// Route::resource('livewire/Item', '\App\Http\Livewire\Item');
 Route::get('Inscripciones/Productor/buscar', ['as' => 'Productor.buscar', 'uses'=>'\App\Http\Controllers\ProductorController@busqueda']);
 Route::get('Inscripciones/Inscripcion/LoadItem', ['as' => 'Inscripcion.LoadItem', 'uses'=>'\App\Http\Controllers\InscripcionesController@LoadItem']);
 Route::get('Inscripciones/export/', ['as' => 'Inscripcion.export','uses'=>'App\Http\Controllers\InscripcionesController@export']);
@@ -45,7 +47,11 @@ Route::get('Productor/export/', ['as' => 'Productor.export','uses'=>'App\Http\Co
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/Livewire/item', function () {
 
+    return view('default');
+
+    });
 Auth::routes(["register" => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

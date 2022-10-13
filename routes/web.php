@@ -25,7 +25,7 @@ Route::resource('layouts/Menu', 'MenuController@index');
 Route::resource('configuracion/roles', '\App\Http\Controllers\RolesController');
 Route::resource('configuracion/especies', '\App\Http\Controllers\EspeciesController');
 Route::resource('configuracion/provincias', '\App\Http\Controllers\ProvinciasController');
-Route::resource('configuracion/departamentos', '\App\Http\Controllers\departamentosController');
+Route::resource('configuracion/departamentos', '\App\Http\Controllers\DepartamentosController');
 //  Route::post('configuracion/departamentos/search', ['as' => '\App\Http\Controllers\departamentos.search', 'uses'=>'departamentosController@search']);
  Route::resource('configuracion/localidad', '\App\Http\Controllers\LocalidadesController');
 

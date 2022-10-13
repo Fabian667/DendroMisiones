@@ -39,16 +39,16 @@ class Item extends Component
     }
     public function guardar()
     {
-        // $max= Inscripciones::max('id');
-        // $idInscripcion=$max+1;
+         $max= Inscripciones::max('id');
+       $idInscripcion=$max+1;
 
 
             ModelsItem::create([
                 'Cantidad' => $this->Cantidad,
-                'idEspecie' => $this->idEspecie,
+                'idEspecie' => $this->idEspecie+1,
                 'areaUni' => $this->areaUni,
                 'areaApl' => $this->areaApl,
-                'idInscripcion' => $this->idInscripcion
+                'idInscripcion' =>$idInscripcion
 
             ]);
             $this->resetInput();

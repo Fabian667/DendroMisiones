@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class TipoInstituciones extends Model
 {
-    use HasFactory;
+    protected $table = 'tipoinstitucion';
+    protected $fillabel=[
+        'id',
+        'Nombre'
+
+    ];
+    public function Institucion()
+    {
+        return $this->hasMany(Institucion::class);
+    }
 }

@@ -109,9 +109,7 @@ class InscripcionesController extends Controller
         $insripcion->LAT = $request->input("LAT");
         $insripcion->LONG = $request->input("LONG");
         $insripcion->PDAPJECNIA = $request->input("PDAPJECNIA");
-        $insripcion->IdEspecie = $request->input("IdEspecie");
-        $insripcion->SupPINO = $request->input("SupPINO");
-        $insripcion->PlantinCantidad = $request->input("PlantinCantidad");
+
         $insripcion->DocumentacionLegal = $request->input("DocumentacionLegal");
         $insripcion->DomicilioEmprendimiento = $request->input("DomicilioEmprendimiento");
         $insripcion->Descripcion = $request->input("Descripcion");
@@ -119,8 +117,7 @@ class InscripcionesController extends Controller
         $insripcion->IdReferente = $request->input("IdReferente");
         $insripcion->save();
         $insripcion = inscripciones::all();
-        return back();
-        $item = new item();
+        return redirect()->route('Inscripcion.index');
     }
 
     public function show(Inscripciones $inscripciones)

@@ -16,9 +16,12 @@
     <div class="container">
         {!! Form::open(['route' => 'Referente.index', 'method' => 'GET', 'role' => 'search']) !!}
         {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Apellido Nombre']) !!}
-        <button type="submit" class="btn btn-sm btn-success">BUSCAR</button>
-        <a class="btn btn-sm btn-primary" href="{{ route('Referente.create') }}">Nuevo</a></i>
+        <div class="m-1">
+            <button type="submit" class="btn btn-sm btn-outline-success">BUSCAR</button>
+            <a class="btn btn-sm btn-outline-primary" href="{{ route('Referente.create') }}">Nuevo</a></i>
+        </div>
         {!! Form::close() !!}
+        <hr>
 
 
 
@@ -37,35 +40,34 @@
             </thead>
             <tbody>
                 @foreach ($Personas as $ref)
-                                <tr>
-                                    <td>{{ $ref->id }}</td>
-                                    <td>{{ $ref->Apellido }}</td>
-                                    <td>{{ $ref->Nombre }}</td>
-                                    <td>{{ $ref->Telefono }}</td>
-                                    <td>{{ $ref->Direccion }}</td>
-                                    <td>{{ $ref->Mail }}</td>
-                                    @foreach ($institucion as $key => $value)
-                                        @if ($value === $ref->IdInstitucion)
-                                            <td>{{ $key }}</td>
-                                        @endif
-                                    @endforeach
-                                    <TD></TD>
-                                    <td>
-                                        <a class="btn btn-md btn-warning"
-                                            href="{{ route('Referente.edit', $ref->id) }}"
-                                            class="btn btn-sm btn-default">Editar</a>
-                                    </td>
-                                    <td>
-                                        <form action="{{ route('Referente.destroy', $ref) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
+                    <tr>
+                        <td>{{ $ref->id }}</td>
+                        <td>{{ $ref->Apellido }}</td>
+                        <td>{{ $ref->Nombre }}</td>
+                        <td>{{ $ref->Telefono }}</td>
+                        <td>{{ $ref->Direccion }}</td>
+                        <td>{{ $ref->Mail }}</td>
+                        @foreach ($institucion as $key => $value)
+                            @if ($value === $ref->IdInstitucion)
+                                <td>{{ $key }}</td>
+                            @endif
+                        @endforeach
+                        <TD></TD>
+                        <td>
+                            <a class="btn btn-sm btn-outline-warning" href="{{ route('Referente.edit', $ref->id) }}"
+                                class="btn btn-sm btn-default">Editar</a>
+                        </td>
+                        <td>
+                            <form action="{{ route('Referente.destroy', $ref) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
 
-                                            <input type="submit" value="Eliminar" class="btn btn-md btn-danger"
-                                                onclick="return confirm('¿Desea eliminar...?')">
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                <input type="submit" value="Eliminar" class="btn btn-sm btn-outline-danger"
+                                    onclick="return confirm('¿Desea eliminar...?')">
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
 
 
             </tbody>
@@ -75,5 +77,8 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
+<footer>
+    @include('layouts.Pie')
+</footer>
 
 </html>

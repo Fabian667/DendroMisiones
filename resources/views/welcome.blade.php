@@ -145,7 +145,7 @@
             <script src="{{ asset('js/app.js') }}" defer></script>
 
 <footer class="   footer">
-    @extends('layouts.Pie')
+    @include('layouts.Pie')
 </footer>
 
 

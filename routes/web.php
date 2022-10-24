@@ -21,7 +21,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::resource('configuracion/tipoInstitucion', '\App\Http\Controllers\TipoInstitucionesController');
-Route::resource('layouts/Menu', 'MenuController@index');
+// Route::resource('layouts/Menu', 'MenuController@index');
 Route::resource('configuracion/roles', '\App\Http\Controllers\RolesController');
 Route::resource('configuracion/especies', '\App\Http\Controllers\EspeciesController');
 Route::resource('configuracion/provincias', '\App\Http\Controllers\ProvinciasController');

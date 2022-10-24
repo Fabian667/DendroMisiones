@@ -28,14 +28,18 @@
 
             <div class="row">
                 {{-- comienzo formulario----------------------------------------------------------------------------------------------------------------------------------- --}}
-                <div class=" col-sm-5 bg-dark text-white">
-                    <div class="  container-fluid">
-                        <label class=" row justify-content-start ">INGRESE EL DNI DEL PRODUCTOR</label>
+                <div >
+                    <div class=" col-sm-6 bg-dark text-white">
+                        <label class="  ">INGRESE EL DNI DEL PRODUCTOR</label>
                         <div class=" row justify-content-start  ">
                             {!! Form::open(['route' => 'Inscripcion.create', 'method' => 'GET', 'role' => 'search']) !!}
                             {!! Form::text('DNIPr', null, ['class' => 'form-control', 'placeholder' => ' DNI ']) !!}
-                            <button type="submit" class=" btn  btn-sm btn-outline-primary">BUSCAR</button>
-                            {!! Form::close() !!}
+                            <div class="col">
+
+                                <span class="float-right">
+                                    <button type="submit" class=" float-md-end btn  btn-sm btn-outline-primary m-1">BUSCAR</button>
+                                 </span>
+                            </div>   {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
@@ -50,7 +54,7 @@
                     <div class="well">
 
                         <div class="row">
-                            <div class="col-lg-5 control-label ">
+                            <div class="col-xs-6 col-sm-6 col-md-6 ">
                                 <div class="fomr-group ">
                                     <label>FECHA DE INSCRIPCION</label>
                                     <input type="date" class="form-control" name="FechaInscripcion" tabindex="1">
@@ -165,111 +169,97 @@
                         placeholder="DIRECCION DEL EMPRENDIMIENTO">
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6">
-                    <label for="">Localidad</label>
-                    <br>
-                    <select name="DomicilioEmprendimiento" id="DomicilioEmprendimiento">
-                        @foreach ($localidad as $key => $value)
-                            <option value="{{ $value }}">{{ $key }}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <label for="">Latitud</label>
-                    <br>
-                    <input type="text" name="LAT" class="form-control" placeholder="LATITUD">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <label for="">Longitud</label>
-                    <br>
-                    <input type="text" name="LONG" class="form-control" placeholder="LONGITUD">
-                    <br>
-                </div>
-                {{-- -- comienzo datos del emprendimiento---------------------------------------------------------------------------------------------------------------------------------- --}}
-
-                <hr>
-
-                <div class="col-xs-100 col-sm-6 col-md-6" style="text-align: center">
-                    <u>
-                        <H6>
-                            Datos del Emprendimiento
-
-                        </H6>
-                        <br>
-                    </u>
-                </div>
+                <label for="">Localidad</label>
                 <br>
-
-                <div class="">
-                    <u>
-                        <h6>
-                            Carga de Productos a Entregar
-                        </H6>
-                    </u>
-                </div>
-            </div>
-
-            {{-- empieza la carga de item --}}
-            <div class="col-xs-18 col-sm-18 col-md-18">
-                {{-- <button type="button" class=" btn  btn-sm btn-outline-primary" data-bs-toggle="modal"
-                    data-bs-target="#CargaItem">
-                    Agregar Producto
-                </button> --}}
-
-                {{-- @livewire('Item') --}}
-
-
-                <div x-data x-init="window.Livewire.rescan($el)">
-                    <livewire:item>
-
-                </div>
-
-
-
-
-
-            </div>
-
-            <div class="col-sm-10  h-auto">
-                <label for="">Descripciones</label>
-                <input type="text" name="Descripcion" class="form-control" placeholder="DESCRIPCION">
-
-            </div>
-            <br>
-            <hr>
-            <div class="col-sm-8">
-                <u>
-                    <H6>
-                        Datos Anexos
-                    </H6>
-                </u>
-            </div>
-            <br>
-            {{-- @foreach ($productor as $pro)
-
-                    @endforeach --}}
-            <div class="col-sm-5  ">
-                <label for="">Entidad</label>
-                <select name="IdEntidad" id="IdEntidad">
-                    @foreach ($Institucion as $key => $value)
-                        <option value="{{ $value }}">{{ $key }}</option>
-                    @endforeach>
-                </select>
-            </div>
-            <br>
-            <div class="col-sm-5">
-                <label for="">Referente</label>
-                <select name="IdReferente" id="IdReferente">
-                    @foreach ($persona as $key => $value)
+                <select name="DomicilioEmprendimiento" id="DomicilioEmprendimiento">
+                    @foreach ($localidad as $key => $value)
                         <option value="{{ $value }}">{{ $key }}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-auto">
-                @csrf
-                <button type="submit" class="btn btn-primary">Guardar</button>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <label for="">Latitud</label>
+                <br>
+                <input type="text" name="LAT" class="form-control" placeholder="LATITUD">
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <label for="">Longitud</label>
+                <br>
+                <input type="text" name="LONG" class="form-control" placeholder="LONGITUD">
+                <br>
+            </div>
+            {{-- -- comienzo datos del emprendimiento---------------------------------------------------------------------------------------------------------------------------------- --}}
+
+            <hr>
+
+            <div class="col-xs-100 col-sm-6 col-md-6" style="text-align: center">
+                <u>
+                    <H6>
+                        Datos del Emprendimiento
+
+                    </H6>
+                    <br>
+                </u>
+            </div>
+            <br>
+
+            <div class="">
+                <u>
+                    <h6>
+                        Carga de Productos a Entregar
+                    </H6>
+                </u>
+            </div>
+        </div>
+
+
+        <div class="col-xs-16 col-sm-16 col-md-16">
+            <div x-data x-init="window.Livewire.rescan($el)">
+                <livewire:item>
+
             </div>
 
-            </form>
+        </div>
+
+
+        <br>
+        <hr>
+        <div class="col-sm-8">
+            <u>
+                <H6>
+                    Datos Anexos
+                </H6>
+            </u>
+        </div>
+        <br>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <label for="">Entidad</label>
+            <select name="IdEntidad" id="IdEntidad">
+                @foreach ($Institucion as $key => $value)
+                    <option value="{{ $value }}">{{ $key }}</option>
+                @endforeach>
+            </select>
+        </div>
+        <br>
+        <div class="col-xs-6 col-sm-6 col-md-6">
+            <label for="">Referente</label>
+            <select name="IdReferente" id="IdReferente">
+                @foreach ($persona as $key => $value)
+                    <option value="{{ $value }}">{{ $key }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col-sm-10  h-auto">
+            <label for="">Descripciones</label>
+            <input type="text" name="Descripcion" class="form-control" placeholder="DESCRIPCION">
+
+        </div>
+        <div class="col-auto">
+            @csrf
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+
+        </form>
 
 
 
@@ -277,23 +267,14 @@
         </div>
 
     </section>
-    {{-- comienzo de la clase ModalFormularioItem --}}
-
-    <!-- Button trigger modal -->
-    {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#CargaItem">
-        Launch demo modal
-    </button> --}}
-
-    <!-- Modal -->
-
-    <!-- Full screen modal -->
-
-
 
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     @livewireScripts
 
 </body>
+<footer>
+    @include('layouts.Pie')
+</footer>
 
 </html>

@@ -16,7 +16,7 @@
     <hr>
     <div class="container">
 
-        <form class=" offset-md-1" action="{{ route('Referente.store') }}" method="post">
+        <form class="" action="{{ route('Referente.store') }}" method="post">
 
 
             <div class="well">
@@ -69,7 +69,7 @@
                                 tabindex="6">
                         </div>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="col-xs-6 col-sm-6 col-md-6 mt-1">
                         <div class="form-group">
 
                             <label for="">Rol-Cargo</label>
@@ -82,9 +82,10 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
-                        <div class="form-group">
-                            <label for="localidad">Localidad:</label>
+                    <div class="col-xs-6 col-sm-6 col-md-6 mt-1">
+                        <div class="form-group  ">
+                            <label for="localidad">Localidad: </label>
+                            <br>
                             <select name="IdLocalidad" id="IdLocalidad" tabindex="8">
                                 @foreach ($localidad as $key => $value)
                                     <option value="{{ $value }}">{{ $key }}</option>
@@ -93,7 +94,7 @@
                         </div>
 
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="col-xs-6 col-sm-6 col-md-6  mt-1">
                         <div class="form-group">
                             <label for="localidad">Institucion:</label>
                             <br>
@@ -141,5 +142,7 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
-
+<footer>
+    @include('layouts.Pie')
+</footer>
 </html>

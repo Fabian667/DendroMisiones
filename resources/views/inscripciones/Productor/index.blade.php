@@ -74,16 +74,18 @@
                             <td>{{ $ref->DNI }}</td>
                             <td>{{ $ref->Direccion }}</td>
                             <td>{{ $ref->Mail }}</td>
+
                             @foreach ($institucion as $key => $value)
                                 @if ($value === $ref->IdInstitucion)
                                     <td>{{ $key }}</td>
                                 @endif
                             @endforeach
+                            <td>{{ $ref->Descripcion }}</td>
 
 
 
                             <td>
-                                <a class="btn btn-sm   btn-warning" href="{{ route('Productor.edit', $ref->id) }}">Editar</a>
+                                <a class="btn btn-sm   btn-outline-warning" href="{{ route('Productor.edit', $ref->id) }}">Editar</a>
                             </td>
 
                             <td>
@@ -91,7 +93,7 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <input type="submit" value="Eliminar" class="btn btn-sm btn-danger"
+                                    <input type="submit" value="Eliminar" class="btn btn-sm btn-outline-danger"
                                         onclick="return confirm('¿Desea eliminar...?')">
                                 </form>
                             </td>
@@ -100,8 +102,24 @@
             </tbody>
 
         </table>
+        <div class="bg-dark text-white">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link"
+                            href="{{ $productor->previousPageUrl() }}">Anterior</a></li>
+                    <li class="page-item active"><a class="page-link" href="#"><span
+                                class="sr-only">{{ $productor->currentPage() }}</span></a></li>
+                    <li class="page-item"><a class="page-link" href="{{ $productor->nextPageUrl() }}">Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     </div>
+</body>
+<footer>
+    @include('layouts.Pie')
+</footer>
 
 </html>

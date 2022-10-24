@@ -98,7 +98,7 @@ class ReferenteController extends Controller
         $referente = Personas::findOrFail($id);
         $localidad = Localidades::pluck('id', 'Nombre');
         $Institucion = Instituciones::pluck('id', 'Nombre');
-        return view('inscripciones.referente.edit', ['persona' => $referente], compact('localidad', 'Institucion'));
+        return view('inscripciones.Referente.edit', ['persona' => $referente], compact('localidad', 'Institucion'));
     }
 
     /**

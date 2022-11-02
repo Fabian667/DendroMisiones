@@ -28,6 +28,7 @@ Route::resource('configuracion/provincias', '\App\Http\Controllers\ProvinciasCon
 Route::resource('configuracion/departamentos', '\App\Http\Controllers\DepartamentosController');
 //  Route::post('configuracion/departamentos/search', ['as' => '\App\Http\Controllers\departamentos.search', 'uses'=>'departamentosController@search']);
  Route::resource('configuracion/localidad', '\App\Http\Controllers\LocalidadesController');
+ Route::resource('configuracion/users', '\App\Http\Controllers\UsersController');
 
 // // ------------------------------------------------------------------------
 Route::resource('Inscripciones/Inscripcion', '\App\Http\Controllers\InscripcionesController');

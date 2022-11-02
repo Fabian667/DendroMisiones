@@ -40,33 +40,33 @@
             </thead>
             <tbody>
                 @foreach ($Personas as $ref)
-                    <tr>
-                        <td>{{ $ref->id }}</td>
-                        <td>{{ $ref->Apellido }}</td>
-                        <td>{{ $ref->Nombre }}</td>
-                        <td>{{ $ref->Telefono }}</td>
-                        <td>{{ $ref->Direccion }}</td>
-                        <td>{{ $ref->Mail }}</td>
-                        @foreach ($institucion as $key => $value)
-                            @if ($value === $ref->IdInstitucion)
-                                <td>{{ $key }}</td>
-                            @endif
-                        @endforeach
-                        <TD></TD>
-                        <td>
-                            <a class="btn btn-sm btn-outline-warning" href="{{ route('Referente.edit', $ref->id) }}"
-                                class="btn btn-sm btn-default">Editar</a>
-                        </td>
-                        <td>
-                            <form action="{{ route('Referente.destroy', $ref) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
+                <tr>
+                    <td>{{ $ref->id }}</td>
+                    <td>{{ $ref->Apellido }}</td>
+                    <td>{{ $ref->Nombre }}</td>
+                    <td>{{ $ref->Telefono }}</td>
+                    <td>{{ $ref->Direccion }}</td>
+                    <td>{{ $ref->Mail }}</td>
+                    @foreach ($institucion as $key => $value)
+                    @if ($value === $ref->IdInstitucion)
+                    <td>{{ $key }}</td>
+                    @endif
+                    @endforeach
+                    <TD></TD>
+                    <td>
+                        <a class="btn btn-sm btn-outline-warning" href="{{ route('Referente.edit', $ref->id) }}"
+                            class="btn btn-sm btn-default">Editar</a>
+                    </td>
+                    <td>
+                        <form action="{{ route('Referente.destroy', $ref) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
 
-                                <input type="submit" value="Eliminar" class="btn btn-sm btn-outline-danger"
-                                    onclick="return confirm('¿Desea eliminar...?')">
-                            </form>
-                        </td>
-                    </tr>
+                            <input type="submit" value="Eliminar" class="btn btn-sm btn-outline-danger"
+                                onclick="return confirm('¿Desea eliminar...?')">
+                        </form>
+                    </td>
+                </tr>
                 @endforeach
 
 
